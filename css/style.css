@@ -59,8 +59,8 @@ img {
 	vertical-align: middle;
 	text-transform: uppercase;
 
-	border: 1px solid #ffbe42;
-	background-color: transparent;
+	border: 1px solid #282827;
+	background-color: #ffbe35;
 }
 
 .button:hover,
@@ -89,8 +89,7 @@ img {
 
 /*========================================*/
 .wrapper {
-	min-height: 900px;
-
+	height: 100vh;
 	background-color: #282827;
 	background-image: url("../img/bg-1.jpg");
 	background-repeat: no-repeat;
@@ -107,8 +106,10 @@ img {
 }
 
 .header-overlay {
-	min-height: 900px;
-	background-color: rgb(50 50 50 / 60%);
+	position: relative;
+
+	height: 100%;
+	background-color: rgb(50 50 50 / 70%);
 }
 
 .main-header {
@@ -225,7 +226,7 @@ img {
 
 .main-header .big-heading {
 	margin: 0;
-    padding-top: 60px;
+    padding-top: 100px;
     padding-bottom: 10px;
 
     color: #ffffff;
@@ -287,9 +288,15 @@ img {
 
 /*==================== Хэддер =======================*/
 .header-contacts {
+	position: absolute;
+    content: "";
+    width: 100%;
+    bottom: 0;
+
 	background-color: #ffbe2e;
     display: flex;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
+    flex-wrap: nowrap;
     justify-content: space-around;
 }
 
@@ -302,16 +309,23 @@ img {
 .header-content p {
 	font-size: 28px;
     line-height: 34px;
-    color: #c3c3c3;
+    color: #e2e2e2;
 }
 
 .header-contacts-phone {
 	background-color: black;
-    min-width: 500px;
     color: white;
+    padding: 0 60px;
+    width: 30%;
 }
 
+.header-contacts a {
+	color: #ffffff;
+}
 
+.header-contacts a:hover {
+	color: #ffbe35;
+}
 
 /*==================== Наши преимущества =======================*/
 .middle-heading {
@@ -320,7 +334,7 @@ img {
 	-ms-flex-align: center;
 	align-items: center;
 	margin: 0 auto;
-	padding: 60px 0;
+	padding: 60px 0 10px 0;
 
 	font-size: 38px;
 	line-height: 54px;
@@ -368,7 +382,7 @@ img {
 }
 
 .services-info {
-	padding: 30px 60px;
+	/*padding: 30px 60px; */
 }
 
 .services p {
@@ -399,20 +413,21 @@ img {
 	position: relative;
 
     padding: 80px 20px;
-    margin-bottom: 60px;
+    margin-bottom: 5px;
 
-    width: 280px;
-    min-height: 380px;
+    width: 29.5%;
+    min-height: 160px;
 
-    background-color: white;
-    color: grey;
+    background-color: rgb(0 0 0 / 70%);
+    color: #ffffff;
     text-align: center;
+    transition: background-color 0.5s ease-out;
 
-    border: 1px solid #dfdfdf;
-    box-sizing: border-box;
+   /* border: 1px solid #dfdfdf;
+    box-sizing: border-box; */
 }
 
-.services-items li::before {
+/*.services-items li::before {
 	position: absolute;
     content: "";
     display: block;
@@ -423,7 +438,7 @@ img {
     left: 50%;
     z-index: 1;
     border-radius: 50%;
-}
+} */
 
 .services-items li::after {
 	position: absolute;
@@ -437,12 +452,18 @@ img {
     z-index: 1;
 }
 
+.services-items li:hover {
+	background-color: #ffbe35;
+	transition: background-color 0.5s ease-out;
+	color: #282827;
+}
+
 .phone-button {
 	transition: background-color 0.5s ease-out;
 }
 
 .phone-button:hover {
-	background-color: #ffbe2e;
+	background-color: #4c4c4c;
     transition: background-color 0.5s ease-out;
     color: #ffffff;
 }
@@ -544,7 +565,7 @@ img {
     flex-wrap: nowrap;
     justify-content: space-between;
 
-    padding: 40px;
+    padding: 40px 0;
 }
 
 
@@ -712,14 +733,18 @@ img {
 .territory-info {
 	width: auto;
     padding: 20px;
+    margin-top: 30px;
 
     background-color: rgb(0 0 0 / 60%);
+    background-image: url("../img/geography.png");
+    background-size: 100%;
+    background-position: center;
     color: #ffffff;
     text-align: left;   
 }
 
 .territory-items li {
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 	}
 
 /*====================== Карта ==========================*/
@@ -739,17 +764,17 @@ img {
 
     z-index: 2;
 
-    background-color: #ffbe2e;
+    background-color: rgb(0 0 0 / 70%);
 }
 
 .contacts-block h3 {
 	margin: 0 auto;
 
-	color: #000000;
+	color: #ffbe35;
 }
 
 .contacts-block p {
-	color: #000000;
+	color: #e2e2e2;
 }
 
 .live-map {
@@ -846,7 +871,7 @@ img {
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 	width: 85px;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 	list-style: none;
 }
@@ -904,22 +929,20 @@ img {
 @media screen and (max-width: 768px){
 	body {
 		min-width: 768px;
-
 		font-size: 14px;
 		line-height: 20px;
 	}
 
 	.wrapper,
 	.overlay {
-		min-height: 400px;
+		height: auto;
 	}
 
 	.features,
 	.services,
 	.price-list,
 	.territory,
-	.contacts
-	 {
+	.contacts {
 		min-height: 400px;
 	}
 
@@ -938,8 +961,22 @@ img {
 	}
 
 	.site-navigation a {
-		font-size: 18px;
-		line-height: 24px;
+		font-size: 16px;
+    	line-height: 20px;
+	}
+
+	.header-content {
+		padding-top: 60px;
+	}
+
+	.header-content h2 {
+		margin-bottom: 30px;
+	}
+
+	.header-content p {
+		font-size: 22px;
+    	line-height: 28px;
+    	padding-bottom: 30px;
 	}
 
 	.main-header .big-heading {
@@ -948,14 +985,30 @@ img {
 		width: auto;
 	}
 
+	.header-contacts-style {
+	 	/*display: none;*/
+	 	width: 30%;
+	 }
+
+	 .header-contacts-style.header-contacts-phone {
+	 	display: block;
+	 	padding: 0;
+	 }
+
+	 .header-contacts-style p, .header-contacts-style a {
+		font-size: 18px;
+    	line-height: 22px;
+	 }
+	 
+
 	.middle-heading {
 		font-size: 36px;
 		line-height: 46px;
 	}
 
 	.phone-button {
-		font-size: 26px;
-		line-height: 32px
+		font-size: 20px;
+    	line-height: 28px;
 	}
 
 	.features-items {
@@ -986,6 +1039,11 @@ img {
 
 	.services-items {
 		padding: 0 10px;
+	}
+
+
+	.services-items li {
+		width: 27.5%;
 	}
 
 	.contacts-block {
@@ -1030,7 +1088,7 @@ img {
 	.container {
 		/*width: 300px;*/
 		padding: 10px;
-		padding-bottom: 30px;
+		padding-bottom: 60px;
 
 		flex-wrap: wrap;
     	justify-content: center;
@@ -1106,8 +1164,8 @@ img {
 	}
 
 	.phone-button {
-		font-size: 24px;
-		line-height: 30px;
+		font-size: 20px;
+    	line-height: 28px;
 		padding: 10px 20px;
 	}
 
@@ -1135,6 +1193,41 @@ img {
 	.header-content p {
 		font-size: 16px;
 		line-height: 22px;
+	}
+
+
+	.header-contacts {
+		width: 100%;
+		background-color: #ffbe2e;
+	}
+
+	.header-contacts-style {
+	 	display: none;
+	 }
+
+	 .header-contacts-style.header-contacts-phone {
+	 	display: block;
+	 }
+
+	.header-contacts-phone {
+    	background-color: #ffbe35;
+   		color: #1d1d1d;
+    	padding: 0 60px;
+    	width: 100%;
+    }
+
+    .header-contacts-phone p {
+    	font-size: 20px;
+    	line-height: 24px;
+    }
+
+    .header-contacts a {
+    	color: #282827;
+    }
+    
+
+	.services-items li {
+    	width: 100%;
 	}
 
 	.features-items {
@@ -1281,6 +1374,7 @@ img {
 .feedback-container h3 {
 	text-align: center;
 	font-weight: normal;
+	text-transform: uppercase;
 }
 
 
@@ -1401,7 +1495,7 @@ form {
     border: none; 
     outline: none; 
 
-    background: linear-gradient(45deg, #ff9900 0%, rgb(255 189 51) 100%);
+    background: #ffbe35;
     -webkit-transition: all 0.5s linear;
     -o-transition: all 0.5s linear;
     transition: all 0.5s linear;
@@ -1415,12 +1509,14 @@ form {
     color: white; 
     cursor: pointer; 
     padding: 30px; 
-    border-radius: 50%; 
+    /*border-radius: 50%;*/
+    border-radius: 2px; 
     font-size: 0px; 
 }
 
 #scroll-btn:hover {
     background-position: right center;
+    background-color: 
     -webkit-transition: 0.5s ease;
     -o-transition: 0.5s ease;
     transition: 0.5s ease; 
